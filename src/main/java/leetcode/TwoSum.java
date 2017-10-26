@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by rollin on 17/10/26.
  *
@@ -17,7 +20,25 @@ package leetcode;
 public class TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
+        // map solve
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
+        if (nums != null) {
+            int i = 1;
+            for (int m : nums) {
+                map.put(m, i++);
+            }
+
+            int j = 1;
+            for (int n : nums) {
+                int v = target - n;
+                if (map.containsKey(v)) {
+                    i = map.get(v);
+                    return new int[]{i, j};
+                }
+                j++;
+            }
+        }
 
         return null;
     }
