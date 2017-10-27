@@ -23,22 +23,24 @@ public class TwoSum {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         if (nums != null) {
-            int i = 1;
+            int i = 0;
             for (int m : nums) {
                 map.put(m, i++);
             }
 
-            int j = 1;
+            int j = 0;
             for (int n : nums) {
                 int v = target - n;
-                if (map.containsKey(v)) {
+                if (map.containsKey(v) && map.get(v) != j) {
                     i = map.get(v);
+                    if (i > j) {
+                        return new int[]{j, i};
+                    }
                     return new int[]{i, j};
                 }
                 j++;
             }
         }
-
         return null;
     }
 
