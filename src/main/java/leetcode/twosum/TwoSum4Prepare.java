@@ -7,7 +7,7 @@ import java.util.List;
  * Created by rollin on 17/10/27. Definition for a binary tree node. public class TreeNode { int
  * val; TreeNode left; TreeNode right; TreeNode(int x) { val = x; } }
  */
-public class TwoSum4 {
+public class TwoSum4Prepare {
 
     /**
      * @param root [5,3,6,2,4,null,7]
@@ -43,7 +43,7 @@ public class TwoSum4 {
     }
 
     public static TreeNode build() {
-        Integer[] array = {5, 3, 6, 2, 4, null, 7};
+        Integer[] array = {5, 3, 6, 2, 4, -1, 7};
         TreeNode treeNode = buildTree(array);
 
         return treeNode;
@@ -65,24 +65,27 @@ public class TwoSum4 {
             // rootNode
             TreeNode rootTreeNode = new TreeNode(i);
             return rootTreeNode;
-        } else if (treeNode.left == null) {
-            if (i != null) {
+        }
+        //
+        if (treeNode.val > i) {
+            // add to left
+            if (treeNode.left == null) {
                 TreeNode t = new TreeNode(i);
                 treeNode.left = t;
             } else {
-                treeNode.left = null;
+                insertTreeNode(treeNode.left, i);
             }
-        } else if (treeNode.right == null) {
-            if (i != null) {
+        } else if (treeNode.val < i) {
+            // add to right
+            if (treeNode.right == null) {
                 TreeNode t = new TreeNode(i);
                 treeNode.right = t;
             } else {
-                treeNode.right = null;
+                insertTreeNode(treeNode.right, i);
             }
-        } else {
-            insertTreeNode(treeNode.left, i);
+        } else if (treeNode.val == i) {
+            throw new RuntimeException("data should not same");
         }
-
 
         return treeNode;
     }
