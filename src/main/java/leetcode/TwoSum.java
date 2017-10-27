@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * ID: 1
+ *
  * Created by rollin on 17/10/26.
  *
  * Given an array of integers, return indices of the two numbers such that they add up to a specific
@@ -31,10 +33,10 @@ public class TwoSum {
             int j = 0;
             for (int n : nums) {
                 int v = target - n;
-                if (map.containsKey(v) && map.get(v) != j) {
+                if (map.containsKey(v) && map.get(v)!=j ) {
                     i = map.get(v);
-                    if (i > j) {
-                        return new int[]{j, i};
+                    if(i>j) {
+                        return new int[] {j, i};
                     }
                     return new int[]{i, j};
                 }
