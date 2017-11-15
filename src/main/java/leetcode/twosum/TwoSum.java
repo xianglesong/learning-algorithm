@@ -1,9 +1,11 @@
-package leetcode;
+package leetcode.twosum;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * ID: 1
+ *
  * Created by rollin on 17/10/26.
  *
  * Given an array of integers, return indices of the two numbers such that they add up to a specific
@@ -41,7 +43,6 @@ public class TwoSum {
                 j++;
             }
         }
-
         return null;
     }
 
