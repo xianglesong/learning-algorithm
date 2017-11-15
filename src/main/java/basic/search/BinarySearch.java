@@ -1,4 +1,4 @@
-package search;
+package basic.search;
 
 /**
  * Given an array of integers that is already sorted in ascending order, find two numbers such that
