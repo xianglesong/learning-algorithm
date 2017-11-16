@@ -35,9 +35,8 @@ public class ListNodeDelete {
     }
 
     private ListNode travers(ListNode node) {
-        System.out.println("xxxxx");
         while (node != null) {
-            System.out.println(node.val);
+            System.out.println("node value :" + node.val);
             node = node.next;
         }
         return node;
