@@ -1,4 +1,4 @@
-package lintcode;
+package lintcode.level.soeasy;
 
 /**
  * Created by rollin on 17/11/15.
