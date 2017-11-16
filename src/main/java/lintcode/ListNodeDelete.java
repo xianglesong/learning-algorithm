@@ -48,10 +48,12 @@ public class ListNodeDelete {
 
         ListNode node = newListNode;
         while (node != null) {
+            // tail
             if (node.next == null) {
                 node.next = new ListNode(head.val);
                 break;
             }
+            // continue
             node = node.next;
         }
 
