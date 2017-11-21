@@ -3,13 +3,13 @@ package lintcode.level.easy;
 /**
  * Created by rollin on 17/11/20.
  *
- * 375. 克隆二叉树
- *
- * 深度复制一个二叉树。
- *
- * 给定一个二叉树，返回一个他的 克隆品 。
+ * 175. 翻转二叉树
  */
 public class InvertBinaryTree {
+
+    /**
+     * 当n=0, 1的时候, 结果正确. 假设函数对于n是正确的, 函数对n+1结果也正确. 如果这两点是成立的，我们知道这个函数对于所有可能的n都是正确的。
+     */
 
     /*
      * @param root: a TreeNode, the root of the binary tree
