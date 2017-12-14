@@ -35,6 +35,20 @@ public class CloneBinaryTree {
         return null;
     }
 
+    public TreeNode cloneTree2(TreeNode root) {
+        // write your code here
+        if (root == null) return null;
+
+        if (root != null) {
+            TreeNode treeNode = root;
+            treeNode.left = cloneTree2(root.left);
+            treeNode.right = cloneTree2(root.right);
+            return treeNode;
+        }
+
+        return null;
+    }
+
     public void traverse(TreeNode treeNode) {
         if (treeNode != null) {
             System.out.println("treeNode: " + treeNode.val);
