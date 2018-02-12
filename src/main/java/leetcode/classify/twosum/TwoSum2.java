@@ -1,4 +1,4 @@
-package leetcode.twosum;
+package leetcode.classify.twosum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,18 +20,18 @@ import java.util.Map;
  */
 public class TwoSum2 {
 
-    public static int[] twoSum(int[] numbers, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         // map solve
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-        if (numbers != null) {
+        if (nums != null) {
             int i = 1;
-            for (int m : numbers) {
+            for (int m : nums) {
                 map.put(m, i++);
             }
 
             int j = 1;
-            for (int n : numbers) {
+            for (int n : nums) {
                 int v = target - n;
                 if (map.containsKey(v) && map.get(v) != j) {
                     i = map.get(v);

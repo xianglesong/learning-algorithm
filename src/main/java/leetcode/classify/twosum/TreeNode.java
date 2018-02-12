@@ -1,4 +1,4 @@
-package leetcode.twosum;
+package leetcode.classify.twosum;
 
 /**
  * Created by rollin on 17/10/27.

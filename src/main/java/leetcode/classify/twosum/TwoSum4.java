@@ -1,4 +1,4 @@
-package leetcode.twosum;
+package leetcode.classify.twosum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * Created by rollin on 17/10/27. Definition for a binary tree node. public class TreeNode { int
  * val; TreeNode left; TreeNode right; TreeNode(int x) { val = x; } }
  */
-public class TwoSum4Prepare {
+public class TwoSum4 {
 
     /**
      * @param root [5,3,6,2,4,null,7]
@@ -43,7 +43,7 @@ public class TwoSum4Prepare {
     }
 
     public static TreeNode build() {
-        Integer[] array = {5, 3, 6, 2, 4, -1, 7};
+        Integer[] array = {5, 3, 6, 2, 4, null, 7};
         TreeNode treeNode = buildTree(array);
 
         return treeNode;
@@ -65,27 +65,24 @@ public class TwoSum4Prepare {
             // rootNode
             TreeNode rootTreeNode = new TreeNode(i);
             return rootTreeNode;
-        }
-        //
-        if (treeNode.val > i) {
-            // add to left
-            if (treeNode.left == null) {
+        } else if (treeNode.left == null) {
+            if (i != null) {
                 TreeNode t = new TreeNode(i);
                 treeNode.left = t;
             } else {
-                insertTreeNode(treeNode.left, i);
+                treeNode.left = null;
             }
-        } else if (treeNode.val < i) {
-            // add to right
-            if (treeNode.right == null) {
+        } else if (treeNode.right == null) {
+            if (i != null) {
                 TreeNode t = new TreeNode(i);
                 treeNode.right = t;
             } else {
-                insertTreeNode(treeNode.right, i);
+                treeNode.right = null;
             }
-        } else if (treeNode.val == i) {
-            throw new RuntimeException("data should not same");
+        } else {
+            insertTreeNode(treeNode.left, i);
         }
+
 
         return treeNode;
     }
